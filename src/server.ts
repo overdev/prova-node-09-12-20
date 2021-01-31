@@ -1,5 +1,5 @@
 import http from 'http';
-import express, { NextFunction } from 'express';
+import express from 'express';
 import bodyParser from 'body-parser';
 import logging from './config/logging';
 import config from './config/config';

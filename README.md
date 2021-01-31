@@ -37,6 +37,25 @@ Deverá ser realizado um fork deste repositório e no formulário enviado você 
 -   instalados os packages express, body-parser, dotenv localmente;
 -   outros dotfiles configurados: _.gitignore_, _.vscode/settings_, _.prettierrc_
 
-### Commando `build`
+### Configuração do Servidor
 
-`$ npm run build`
+Feita a definição de middlewares usados nas requisições para:
+
+1. mostrar detalhes das requisições (método, url, ip, status);
+2. fazer o parse do body das requisições;
+3. definir headers; e
+4. tratamento de erros
+
+### Commandos
+
+**Rodar o servidor:**
+
+```bash
+$ npm run start
+```
+
+**Build:**
+
+```bash
+$ npm run build
+```
