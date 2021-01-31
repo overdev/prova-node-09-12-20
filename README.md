@@ -1,6 +1,7 @@
 # Prova de Backend
 
-O projeto inicial é um cadastro de usuários em memória muito simples e sem utilizar nenhuma lib. Apesar de o código estar em qualidade baixa, o projeto está funcional. O que se espera é que o candidato melhore este código de uma maneira que possamos avaliar suas habilidades e competências.
+O projeto inicial é um cadastro de usuários em memória muito simples e sem utilizar nenhuma lib. Apesar de o código estar em qualidade baixa, o projeto está funcional. O que se espera é que o
+candidato melhore este código de uma maneira que possamos avaliar suas habilidades e competências.
 
 ### Rodando o projeto
 
@@ -8,7 +9,8 @@ O projeto inicial é um cadastro de usuários em memória muito simples e sem ut
 
 ## O que será avaliado?
 
-A idéia é deixar o candidato bem livre pra reimplementar o código da maneira que mais lhe for conveniente e que mais demonstre suas habilidades. Está liberado o uso de libs de terceiros, bancos de dados, autenticação, etc.
+A idéia é deixar o candidato bem livre pra reimplementar o código da maneira que mais lhe for conveniente e que mais demonstre suas habilidades. Está liberado o uso de libs de terceiros, bancos de
+dados, autenticação, etc.
 
 1. Qualidade de código
 2. Uso de patterns adequados
@@ -25,3 +27,16 @@ A idéia é deixar o candidato bem livre pra reimplementar o código da maneira 
 ## Como será feita a entrega?
 
 Deverá ser realizado um fork deste repositório e no formulário enviado você deverá responder com o link deste fork.
+
+## Sobre este fork (notas de desenvolvimento)
+
+### Setup inicial
+
+-   atualizadas algumas entradas em _package.json_;
+-   instalados os packages typescript, nodemon, ts-node e prettier globalmente;
+-   instalados os packages express, body-parser, dotenv localmente;
+-   outros dotfiles configurados: _.gitignore_, _.vscode/settings_, _.prettierrc_
+
+### Commando `build`
+
+`$ npm run build`
