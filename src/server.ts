@@ -3,6 +3,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import logging from './config/logging';
 import config from './config/config';
+// rotas
+import sampleRoutes from './routes/sample.route';
 
 // Contexto das mensagens de log referentes a este arquivo
 const CONTEXT = 'Servidor';
@@ -41,6 +43,7 @@ router.use((req, res, next) => {
 });
 
 // ROTAS
+router.use('/sample', sampleRoutes);
 
 // TRATAMENTO DE ERROS
 router.use((req, res, next) => {
