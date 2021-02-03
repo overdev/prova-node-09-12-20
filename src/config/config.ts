@@ -14,9 +14,10 @@ const MONGO_OPTIONS: IMongoDBOptions = {
     retryWrites: true,
 };
 
-const MONGO_USERNAME = process.env.MONGO_USERNAME || 'theUserName';
-const MONGO_PASSWORD = process.env.MONGO_PASSWORD || 'theUserPassWord';
-const MONGO_HOST = process.env.MONGO_HOST || 'cluster0.menhv.mongodb.net/sample?w=majority';
+// mongodb+srv://overdev:xsilent@sandbox-cluster.twap0.mongodb.net/prova-node-helpper?retryWrites=true&w=majority
+const MONGO_USERNAME = process.env.MONGO_USERNAME || 'overdev';
+const MONGO_PASSWORD = process.env.MONGO_PASSWORD || '********';
+const MONGO_HOST = process.env.MONGO_HOST || 'sandbox-cluster.twap0.mongodb.net/prova-node-helpper?w=majority';
 
 const MONGO_CONNECTION: IMongoConnection = {
     username: MONGO_USERNAME,
