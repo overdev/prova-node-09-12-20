@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import logging from '../config/logging';
 
-const CONTEXT = 'Controlador SAMPLE';
+const CONTEXT: str = 'Controlador SAMPLE';
 
 const sampleHealthCheck = (req: Request, res: Response, next: NextFunction) => {
     logging.info(CONTEXT, 'Rota de checagem SAMPLE chamada.');
