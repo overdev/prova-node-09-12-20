@@ -1,21 +1,30 @@
+import { IConfig, IServer, IMongoConnection, IMongoDBOptions } from './config.interface';
 import dotenv from 'dotenv';
-
-export interface IToken {
-    expireTime: string;
-    issuer: string;
-    secret: string;
-}
-export interface IServer {
-    hostname: string;
-    port: string | number;
-    token: IToken;
-}
-export interface IConfig {
-    server: IServer;
-}
 
 // carrega as variáveis de ambiente.
 dotenv.config();
+
+const MONGO_OPTIONS: IMongoDBOptions = {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    socketTimeoutMS: 30_000,
+    keepAlive: true,
+    poolSize: 50,
+    autoIndex: false,
+    retryWrites: true,
+};
+
+const MONGO_USERNAME = process.env.MONGO_USERNAME || 'theUserName';
+const MONGO_PASSWORD = process.env.MONGO_PASSWORD || 'theUserPassWord';
+const MONGO_HOST = process.env.MONGO_HOST || 'cluster0.menhv.mongodb.net/sample?w=majority';
+
+const MONGO_CONNECTION: IMongoConnection = {
+    username: MONGO_USERNAME,
+    password: MONGO_PASSWORD,
+    host: MONGO_HOST,
+    url: `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOST}`,
+    options: MONGO_OPTIONS,
+};
 
 // define a porta, com o default 1337
 const SERVER_PORT: any = process.env.SERVER_PORT || 1337;
@@ -39,6 +48,7 @@ const SERVER: IServer = {
 };
 
 const config: IConfig = {
+    mongo: MONGO_CONNECTION,
     server: SERVER,
 };
 

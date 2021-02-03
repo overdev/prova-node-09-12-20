@@ -1,6 +1,7 @@
 import http from 'http';
 import express from 'express';
 import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 import logging from './config/logging';
 import config from './config/config';
 // rotas
@@ -10,6 +11,17 @@ import userRoutes from './routes/user.route';
 const CONTEXT = 'Servidor';
 
 const router = express();
+
+// CONEXAO COM O MONGODB
+
+mongoose
+    .connect(config.mongo.url, config.mongo.options)
+    .then((result) => {
+        logging.info(CONTEXT, 'Conectado com MongoDB!');
+    })
+    .catch((error) => {
+        logging.error(CONTEXT, error.message, error);
+    });
 
 // DEFINIÇÃO DE ALGUNS MIDDLEWARES USADOS NAS REQUESTS
 

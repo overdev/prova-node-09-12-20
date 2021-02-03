@@ -4,11 +4,12 @@ export interface IToken {
     secret: string;
 }
 export interface IServer {
-    hostname: string;
-    port: string | number;
+    hostname: number | undefined;
+    port: string | number | undefined;
     token: IToken;
 }
 export interface IConfig {
+    mongo: IMongoConnection;
     server: IServer;
 }
 
@@ -27,4 +28,5 @@ export interface IMongoConnection {
     password: string;
     username: string;
     url: string;
+    options: IMongoDBOptions;
 }
